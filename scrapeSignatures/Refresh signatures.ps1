@@ -9,6 +9,10 @@ $workbook.RefreshAll()
 Start-Sleep -Seconds 30  # Wait for refresh to complete
 $workbook.Save()
 $workbook.Close()
+
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show('Your message here')
+
 $excelApp.Quit()
 Remove-Variable excelApp, workbook
 
