@@ -20,12 +20,12 @@ def scrape_signatures():
 
         file_exists = os.path.isfile(csv_file_path)
         with open(csv_file_path, "a", newline="") as csvfile:
-            fieldnames = ["timestamp", "signatures"]
+            fieldnames = ["Timestamp", "Signatures"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             if not file_exists:
                 writer.writeheader()
-            writer.writerow({"timestamp": timestamp, "signatures": signatures})
+            writer.writerow({"Timestamp": timestamp, "Signatures": signatures})
         print(f"Scraped at {timestamp}: {signatures} signatures.")
 
     except requests.exceptions.RequestException as e:
