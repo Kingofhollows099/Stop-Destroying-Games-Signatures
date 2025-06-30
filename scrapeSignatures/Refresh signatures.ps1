@@ -1,5 +1,5 @@
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show('Your message here')
+[System.Windows.Forms.MessageBox]::Show('Refresh started')
 
 $excelFilePath = "C:\Users\Geno\OneDrive\Documents\Signatures over time.xlsx"
 $excelApp = New-Object -ComObject "Excel.Application"
@@ -11,10 +11,10 @@ $workbook.Save()
 $workbook.Close()
 
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show('Your message here')
+[System.Windows.Forms.MessageBox]::Show('Closed')
 
 $excelApp.Quit()
 Remove-Variable excelApp, workbook
 
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show('Your message here')
+[System.Windows.Forms.MessageBox]::Show('Done')
