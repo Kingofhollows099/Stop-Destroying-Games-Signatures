@@ -9,6 +9,3 @@ $workbook.Save()
 $workbook.Close()
 $excelApp.Quit()
 Remove-Variable excelApp, workbook
-
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show('Your message here')
