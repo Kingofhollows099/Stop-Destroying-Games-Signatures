@@ -3,7 +3,8 @@ import requests
 from datetime import datetime
 import csv
 import os
-import json
+import pandas as pd
+
 
 def scrape_signatures():
     api_url = "https://eci.ec.europa.eu/045/public/api/report/progression"
@@ -32,6 +33,16 @@ def scrape_signatures():
         print(f"Error fetching the URL: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+def updateExcel():
+    excel_path = r"C:\Users\Geno\OneDrive\Documents\Signatures over time.xlsx"
+    csv_path = r"C:\Users\Geno\Documents\GitHub\Stop-Destroying-Games-Signatures\scrapeSignatures\signatures.csv"
+
+    df_csv = pd.read_csv(csv_path)
+
+    with pd.ExcelWriter(excel_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+        df_csv.to_excel(writer, sheet_name='Signature data', index=False)
+
 
 if __name__ == "__main__":
     scrape_signatures()
