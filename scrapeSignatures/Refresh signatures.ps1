@@ -1,3 +1,4 @@
+
 $excelFilePath = "C:\Users\Geno\OneDrive\Documents\Signatures over time.xlsx"
 $excelApp = New-Object -ComObject "Excel.Application"
 $excelApp.Visible = $false
@@ -8,4 +9,6 @@ $workbook.Save()
 $workbook.Close()
 $excelApp.Quit()
 Remove-Variable excelApp, workbook
-exit
+
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show('Your message here')
