@@ -20,3 +20,7 @@ set timestamp=%yyyy%-%mm%-%dd%_%hh%-%min%
 git add .
 git commit -m "Auto update: %timestamp%"
 git push origin main
+
+::Start Excel update
+echo "Phase 3 Starting"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -NonInteractive -File "%~dp0Refresh signatures.ps1"
